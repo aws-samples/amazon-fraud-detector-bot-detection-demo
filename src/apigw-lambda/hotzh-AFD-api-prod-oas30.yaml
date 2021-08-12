@@ -1,0 +1,66 @@
+openapi: "3.0.1"
+info:
+  title: "hotzh-AFD-api"
+  version: "2020-11-06T16:41:07Z"
+servers:
+- url: "https://zkrwp6hul3.execute-api.eu-west-1.amazonaws.com/{basePath}"
+  variables:
+    basePath:
+      default: "/prod"
+paths:
+  /:
+    get:
+      parameters:
+      - name: "email_address"
+        in: "query"
+        required: true
+        schema:
+          type: "string"
+      - name: "registration_time"
+        in: "query"
+        required: true
+        schema:
+          type: "string"
+      - name: "InvocationType"
+        in: "header"
+        schema:
+          type: "string"
+      - name: "ip_address"
+        in: "query"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+    options:
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
+            Access-Control-Allow-Methods:
+              schema:
+                type: "string"
+            Access-Control-Allow-Headers:
+              schema:
+                type: "string"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+components:
+  schemas:
+    Empty:
+      title: "Empty Schema"
+      type: "object"
