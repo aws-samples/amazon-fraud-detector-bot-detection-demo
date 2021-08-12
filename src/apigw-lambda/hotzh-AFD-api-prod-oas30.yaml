@@ -3,7 +3,7 @@ info:
   title: "hotzh-AFD-api"
   version: "2020-11-06T16:41:07Z"
 servers:
-- url: "https://zkrwp6hul3.execute-api.eu-west-1.amazonaws.com/{basePath}"
+- url: "<your-api-gw-url>/{basePath}"
   variables:
     basePath:
       default: "/prod"
